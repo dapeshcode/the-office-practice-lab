@@ -14,7 +14,32 @@
 # takes a String argument of an employee's name, a Fixnum argument of the employee's salary and an instance of a Manager class and creates a new employee who work at this role
 
 class Role
-    
+
+attr_reader :name
+@@all = []
+
+    def initialize(name)
+        @name = name
+        @@all << self
+    end
+
+    def employees
+
+    end
+
+    def managers
+        ​
+    end
+
+    def self.all
+        binding.pry
+        @@all
+    end
+
+    def add_employee(employee_name, employee_salary, manager_instance)
+       employee_name = Employee.new(employee_name, employee_salary)
+    end
+
 end
 
 
