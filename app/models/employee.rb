@@ -23,17 +23,26 @@
 
 class Employee
 
-attr_accessor :name, :salary
-@@all = []
+attr_accessor :employee_name, :salary
+    @@all = []
 
-    def initialize(name, salary)
-        @name = name
+    def initialize(employee_name, salary)
+        @employee_name = employee_name
         @salary = salary
         @@all << self
     end
 
+    def self.all 
+        @@all
+    end 
+
+    def employee_role
+        Role.new("develeper")
+        
+    end 
+
     def manager
-        binding.pry
+        # binding.pry
         
         #returns manager instance
 

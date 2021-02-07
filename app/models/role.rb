@@ -1,9 +1,6 @@
 
 # manager --< role >-- employee
 
-# Role is initialized with a name, which won't ever change.
-# Role#name
-# returns a String that is the role's name
 # Role#employees
 # returns an array of all the Employees who work at that role
 # Role#managers
@@ -15,31 +12,42 @@
 
 class Role
 
-attr_reader :name
-@@all = []
+attr_reader :role_name
+    @@all = []
 
-    def initialize(name)
-        @name = name
+
+    def initialize(role_name)
+        @role_name = role_name
         @@all << self
     end
 
-    def employees
-
-    end
-
-    def managers
-        ​
-    end
 
     def self.all
-        binding.pry
         @@all
+        
     end
 
     def add_employee(employee_name, employee_salary, manager_instance)
-       employee_name = Employee.new(employee_name, employee_salary)
+        Employee.new(employee_name, employee_salary)
+    
+     end
+  
+
+    
+
+    def employees
+        # returns an array of all the Employees who work at that role
+        # binding.pry
+        
+    end
+
+    def managers
+        # returns a unique array of all the Manager instances who oversee Employees at that role
+        ​
     end
 
 end
+
+
 
 

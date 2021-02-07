@@ -21,19 +21,23 @@
 
 
 class Manager
-    attr_accessor :name, :age, :department, :role
+    attr_accessor :name, :age, :department
     @@all = []
 
 
-    def initialize(name, department, age)
-        @name = name 
-        @department = department 
-        @age = age 
+    def initialize(manager_name, manager_department, manager_age)
+        @manager_name = manager_name 
+        @manager_department = manager_department 
+        @manager_age = manager_age 
         @@all << self 
     end 
 
     def self.all 
         @@all
+    end 
+
+    def employees 
+        
     end 
 
 
@@ -45,16 +49,16 @@ class Manager
         self.all.map{|manager|manager.age}        
     end
 
-    def self.average_age      
-        self.all_ages.sum/self.all_ages.size
-    end 
+    # def self.average_age      
+    #     self.all_ages.sum/self.all_ages.size
+    # end 
 
     def self.all_departments
-        self.all.map{|manager|manager.department} 
+        self.all.map{|manager|manager.manager_department} 
     end
 
 
     
 end
 
-test = Manager.new("sylwia", "flatiron", 33)
+
