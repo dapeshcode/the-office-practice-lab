@@ -11,13 +11,15 @@
 # takes a String argument of an employee's name, a Fixnum argument of the employee's salary and an instance of a Manager class and creates a new employee who work at this role
 
 class Role
-
+attr_accessor :employee_instance, :manager_instance
 attr_reader :role_name
     @@all = []
 
 
-    def initialize(role_name)
+    def initialize(role_name, employee_instance, manager_instance)
         @role_name = role_name
+        @employee_instance = employee_instance
+        @manager_instance = manager_instance
         @@all << self
     end
 
@@ -33,12 +35,21 @@ attr_reader :role_name
      end
   
 
-    
+    def employees
+         # returns an array of all the Employees who work at that role
+        array = []
+        Role.all.each do |each_role| 
+            if each_role.role_name == self.role_name
+                array << each_role.employee_instance
+            end 
+        end 
+        array
+    end 
 
     def employees
-        # returns an array of all the Employees who work at that role
-        # binding.pry
-        
+       
+        Role.all.map{|each_role| each_role.employee_instance}
+
     end
 
     def managers

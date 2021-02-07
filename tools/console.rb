@@ -22,20 +22,24 @@ end
 bleak = Manager.new("bleak", "flatiron department", 26)
 manager2 = Manager.new("name2", "flatiron department2", 30)
 alex = Employee.new("alex", 200000)
+alanna = Employee.new("alanna", "80000")
 # Manager.average_age
-testrole = Role.new("Butcher")
-testrole2 = Role.new("Head of Digital")
+developer = Role.new("developer", alex, bleak)
+junior_dev = Role.new("junior_dev", alanna, manager2)
+promotion = Role.new("promotion", alanna, manager2)
 
 # alex.manager
-testrole.add_employee("Ben", 400000, bleak)
-testrole.add_employee("Beno", 400000, bleak)
-testrole2.add_employee("Benoi", 400000, manager2)
-testrole2.add_employee("Benoit", 400000, manager2)
+developer.add_employee("Ben", 400000, bleak)
+developer.add_employee("Beno", 400000, bleak)
+junior_dev.add_employee("Benoi", 400000, manager2)
+junior_dev.add_employee("Benoit", 400000, manager2)
 
 #Employee#role
 
 #Role#employee 
-testrole.employees
+developer.employees
+
+developer.roles
 
 
 
