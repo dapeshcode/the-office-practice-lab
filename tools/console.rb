@@ -7,39 +7,42 @@ def reload
 end
 
 
+#role instances
+junior = Role.new("junior dev")
+senior = Role.new("senior dev")
+comp_genius = Role.new("comp genius")
+
+
+#manager instances 
+manager1 = Manager.new("sylwia", "IT", 26)
+manager2 = Manager.new("lindsey", "SUPPORT", 27)
+manager3 = Manager.new("Sean", "SUPPORT", 31)
+
+
+
+#employee instances
+employee1 = Employee.new("alex", manager1, junior, 500)
+employee2 = Employee.new("linda", manager1, senior, 600)
+employee3 = Employee.new("da-mell", manager2, junior, 700)
+employee4 = Employee.new("bleak", manager3, senior, 800)
+
+#employee methods 
+#Employee.paid_over 
+Employee.paid_over(600)
+Employee.all_managers
+Employee.find_by_department("SUPPORT")
+Employee.search_by_role("junior dev")
+employee4.get_promoted(comp_genius)
+
+#role methods 
+junior.employees
+senior.managers
 
 
 
 
 
 
-# employee = Employee.new("name", "salary")
-# employee.employee_manager 
-
-# employee = Employee.new("name", "salary")
-# employee.employee_manager 
-
-bleak = Manager.new("bleak", "flatiron department", 26)
-manager2 = Manager.new("name2", "flatiron department2", 30)
-alex = Employee.new("alex", 200000)
-alanna = Employee.new("alanna", "80000")
-# Manager.average_age
-developer = Role.new("developer", alex, bleak)
-junior_dev = Role.new("junior_dev", alanna, manager2)
-promotion = Role.new("promotion", alanna, manager2)
-
-# alex.manager
-developer.add_employee("Ben", 400000, bleak)
-developer.add_employee("Beno", 400000, bleak)
-junior_dev.add_employee("Benoi", 400000, manager2)
-junior_dev.add_employee("Benoit", 400000, manager2)
-
-#Employee#role
-
-#Role#employee 
-developer.employees
-
-developer.roles
 
 
 

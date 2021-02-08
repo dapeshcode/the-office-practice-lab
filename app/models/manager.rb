@@ -7,6 +7,7 @@
 # returns a String that is the department that the manager oversees
 # Manager#age
 # returns a Fixnum that is the age of the manager
+
 # Manager#employees
 # returns an Array of all the employees that the manager oversees
 # Manager#roles
@@ -19,46 +20,28 @@
 # returns a Float that is the average age of all the managers​
 
 
-
-class Manager
-    attr_accessor :name, :age, :department
+class Manager 
+    attr_accessor :manager_name, :department, :manager_age
+    
     @@all = []
 
-
-    def initialize(manager_name, manager_department, manager_age)
-        @manager_name = manager_name 
-        @manager_department = manager_department 
-        @manager_age = manager_age 
+    def initialize(manager_name, department, manager_age)
+        @manager_name = manager_name
+        @department = department
+        @manager_age = manager_age
         @@all << self 
     end 
+end 
 
-    def self.all 
-        @@all
-    end 
 
-    def employees 
-        
-    end 
+   
+   
 
 
 
-    def roles
-    end
-
-    def self.all_ages
-        self.all.map{|manager|manager.age}        
-    end
-
-    # def self.average_age      
-    #     self.all_ages.sum/self.all_ages.size
-    # end 
-
-    def self.all_departments
-        self.all.map{|manager|manager.manager_department} 
-    end
 
 
     
-end
+
 
 
