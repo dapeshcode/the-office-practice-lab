@@ -36,7 +36,19 @@ employee4.get_promoted(comp_genius)
 
 #role methods 
 junior.employees
+junior.managers
+senior.employees
 senior.managers
+
+manager1.employees
+manager2.employees
+
+manager1.roles
+manager2.roles
+manager3.roles
+
+Manager.all_departments
+Manager.age
 
 
 

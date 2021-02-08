@@ -1,5 +1,5 @@
 
-# manager --< role >-- employee
+# manager --< employee >-- role
 
 # Role#employees
 # returns an array of all the Employees who work at that role
@@ -31,9 +31,12 @@ class Role
 
     def managers
     # returns a unique array of all the Manager instances who oversee Employees at that role
-        Employee.all.select do |employee| 
-        binding.pry
-        end 
+        employees.map(&:manager).uniq
+    
+    end 
+
+    def add_employee(emp_name, emp_salary, manager_instance)
+        Employee.new(emp_name, manager_instance, self, emp_salary)
     end 
 
 end

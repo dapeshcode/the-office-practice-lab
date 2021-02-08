@@ -1,4 +1,4 @@
-# manager --< role >-- employee
+# manager --< employee >-- role
 
 
 
@@ -35,7 +35,7 @@ class Employee
 
     def self.all_managers 
         #helper method returns all managers 
-        self.all.map{|employee| employee.manager}
+        self.all.map(&:manager)
 
     end 
 
