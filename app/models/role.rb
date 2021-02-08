@@ -36,6 +36,7 @@ class Role
     end 
 
     def add_employee(emp_name, emp_salary, manager_instance)
+        #creates a new employee who works at this role
         Employee.new(emp_name, manager_instance, self, emp_salary)
     end 
 

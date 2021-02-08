@@ -55,7 +55,7 @@ class Manager
 
     def self.all_ages
         #helper method
-        self.all.map(&:manager_age)
+        all.map(&:manager_age)
     end 
 
     def self.age 
@@ -63,10 +63,6 @@ class Manager
     all_ages.sum.to_f/all_ages.size.to_f
     end 
      
-
-
-
-
 end 
 
 

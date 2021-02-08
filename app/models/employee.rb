@@ -11,7 +11,7 @@
 
 
 class Employee
-    attr_accessor :employee_name, :employee_salary, :manager, :role
+    attr_accessor :employee_name, :manager, :role, :employee_salary
 
     @@all = []
 
@@ -30,23 +30,24 @@ class Employee
 
     def self.paid_over(fix_num)
         # takes a Fixnum argument and returns an Array of all the employees whose salaries are over that amount
-        self.all.select{|employee| employee.employee_salary > fix_num}
+        all.select{|employee| employee.employee_salary > fix_num}
+        
     end 
 
     def self.all_managers 
         #helper method returns all managers 
-        self.all.map(&:manager)
+        all.map(&:manager)
 
     end 
 
     def self.find_by_department(department_name)
         # takes a String argument that is the name of a department and returns the first employee whose manager is working in that department
-        self.all.find{|employee| employee.manager.department == department_name}
+        all.find{|employee| employee.manager.department == department_name}
     end 
 
-    def self.search_by_role(role)
+    def self.search_by_role(role_name)
         # takes a String argument that is the name of a role and returns all the employees who work at that role
-        self.all.select{|employee| employee.role.role_name == role}
+        all.select{|employee| employee.role.role_name == role_name}
     end 
 
     def get_promoted(new_role)

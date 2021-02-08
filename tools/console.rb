@@ -26,6 +26,9 @@ employee2 = Employee.new("linda", manager1, senior, 600)
 employee3 = Employee.new("da-mell", manager2, junior, 700)
 employee4 = Employee.new("bleak", manager3, senior, 800)
 
+employee1.manager
+employee2.manager
+
 #employee methods 
 #Employee.paid_over 
 Employee.paid_over(600)
@@ -40,6 +43,7 @@ junior.managers
 senior.employees
 senior.managers
 
+#manager methods
 manager1.employees
 manager2.employees
 
